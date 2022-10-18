@@ -10,7 +10,7 @@ sxhkd
 
 bspc
 
-php
+php/golang(Можно скомпилировать конфиг из bspwmrc.go)
 
 -------
 
