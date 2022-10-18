@@ -27,4 +27,4 @@ class Bspwm {
 }
 
 $bspwm = new Bspwm;
-shell_exec('bspc monitor -d             ');
+shell_exec('bspc monitor -d  1 2 3 4 5 6 7 8 9 10');
