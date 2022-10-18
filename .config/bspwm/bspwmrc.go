@@ -122,6 +122,7 @@ config(`borderless_monocle`, borderless_monocle)
 config(`gapless_monocle`, gapless_monocle)
 config(`paddingless_monocle`, paddingless_monocle)
 shell(dmenu_rule)
+shell("bspc monitor -d  1 2 3 4 5 6 7 8 9 10")
 }
 
 
