@@ -92,6 +92,16 @@ dmenu_rule := `bspc rule -a dmenu rectangle:=900x22+610+90`
 
 
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 
