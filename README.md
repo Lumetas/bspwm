@@ -10,6 +10,8 @@ sxhkd
 
 bspc
 
+php
+
 -------
 
 
