@@ -7,6 +7,8 @@ xsetroot -cursor_name left_ptr &
 compton -f --vsync drm &
 feh --bg-scale bg4.jpg &
 tint2 & 
+setxkbmap -option 'ctrl:nocaps' &
+setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle" &
 
 
 #ВОРКСПЕЙСЫ
