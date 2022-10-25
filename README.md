@@ -2,7 +2,7 @@
 
 bspwm
 
-tint2
+tint2/polybar
 
 tint2conf
 
