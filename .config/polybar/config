@@ -2,34 +2,8 @@
 ;
 ;
 ;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
-;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
-;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-;
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/polybar/polybar
-;
-;   The README contains a lot of information
-;
-;==========================================================
 
-;ЦВЕТА
-[colors]
-;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
-
-;НАСТРОЙКИ ПАРАМЕТРОВ ОТОБРАЖЕНИЯ ПАНЕЛИ
-[bar/example]
+[bar/main]
 ;НА КАКОМ МОНИТОРЕ ОТОБРАЖАТЬ ПАНЕЛЬ, ПО ДЕФОЛТУ НА ВСЕХ
 ;monitor = ${env:MONITOR:HDMI-1}
 ;ШИРИНА, ВЫСОТА, СМЕЩЕНИЕ, СКРУГЛЕНИЕ, ВЫРАВНИВАНИЕ
@@ -68,11 +42,17 @@ font-2 = siji:pixelsize=10;1
 ;МОДУЛИ СЛЕВА, СПРАВА И ПО ЦЕНТРУ
 modules-left = bspwm i3
 modules-center = mpd
-modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-
+modules-right = alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+	tray-position = right
+	tray-detached = false
+	tray-offset-x = 0
+	tray-offset-y = 0
+	tray-padding = 4
+	tray-maxsize = 20
+	tray-scale = 1.0
 ;НАСТРОЙКИ ТРЕЯ, ВЫРАВНИВАНИЕ, ОТСТУПЫ, ЕСЛИ ЗАКОМЕНТИТЬ ТО ЕГО НЕ БУДЕТ
-tray-position = right
-tray-padding = 2
+;tray-position = right
+;tray-padding = 2
 ;tray-background = #0063ff
 
 ;ХЗ ЧТО ТАКОЕ, НЕ ТРОГАЛ
@@ -307,6 +287,17 @@ animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
+[module/arrow]	
+	type = custom/text
+	content =   #use this if it looks small : content = %{T2}%{T-}
+	content-background = ${colors.background}
+	content-foreground = ${colors.primary}
+	click-right = ~/.config/polybar/scripts/tray.py 
+
+[module/nothing]
+	type = custom/script
+	exec = echo ""
+	hidden = true
 
 ;НАСТРОЙКИ КОМОЗИТА, ТАК КАК ЮЗАЮ PICOM НИЧЕГО ЗА НИХ НЕ СКАЖУ
 [settings]
